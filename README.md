@@ -1,1 +1,1 @@
-# maven-publish-template
+# Logger

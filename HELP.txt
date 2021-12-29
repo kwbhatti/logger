@@ -5,19 +5,19 @@ mvn nexus-staging:release
 mvn nexus-staging:drop
 
 
-mvn -DtestngFile=testng.xml clean install
+mvn clean install
 	-will run the tests
 	-will not create java docs
 	-will not run gpg
 	-will not deploy
 
-mvn -Pcore -Pdoc -Pmaven-deploy -DtestngFile=testng.xml clean deploy
+mvn -Pcore -Pdoc -Pmaven-deploy clean deploy
 	-will run the tests
 	-will create java docs
 	-will run gpg
 	-will deploy to maven
 
-mvn -Pcore -Pdoc -Pgithub-deploy -DtestngFile=testng.xml clean deploy
+mvn -Pcore -Pdoc -Pgithub-deploy clean deploy
 	-will run the tests
 	-will create java docs
 	-will run gpg
