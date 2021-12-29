@@ -3,11 +3,8 @@ package com.chimpcentral;
 import java.io.IOException;
 import java.util.List;
 
-import com.discovery.ninja.files.FlatFile;
-import com.discovery.ninja.files.helpers.NinjaFile.FileStatus;
-import com.discovery.ninja.logger.Logger;
-import com.discovery.ninja.logger.info.LoggerInfo;
-import com.discovery.ninja.logger.logs.Log;
+import com.chimpcentral.io.FileStatus;
+import com.chimpcentral.io.FlatFile;
 
 public class Compiler {
 
@@ -15,7 +12,6 @@ public class Compiler {
 	private LoggerInfo loggerInfo = null;
 	private ContentHelper fileHelper = null;
 	private FlatFile logFile = null;
-//	private StringBuilder finalLogContent = new StringBuilder();
 	
 	public Compiler(Logger logger) {
 		this.logger = logger;

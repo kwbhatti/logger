@@ -2,12 +2,10 @@ package com.chimpcentral;
 
 import java.util.Arrays;
 
-import com.discovery.ninja.logger.enums.UserOption;
-
 public class LoggerInfo extends AbstractLoggerOptions<LoggerInfo> implements SearchableOptions<LoggerInfo> {
 
 	private static final String USER_DIR = System.getProperty("user.dir");
-	private static final String RESOURCES_DIR = USER_DIR + "/src/main/resources/com/discovery/ninja/logger";
+	private static final String RESOURCES_DIR = USER_DIR + "/src/main/resources/com/chimpcentral";
 
 	public LoggerInfo() {
 		setDefaultInfo();

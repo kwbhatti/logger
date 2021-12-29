@@ -3,8 +3,6 @@ package com.chimpcentral;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.discovery.ninja.logger.enums.UserOption;
-
 public class AbstractLoggerOptions<T> {
 	
 	protected Map<UserOption, String> userOptionsMap = new HashMap<UserOption, String>();

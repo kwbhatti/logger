@@ -2,8 +2,6 @@ package com.chimpcentral;
 
 import java.util.Map;
 
-import com.discovery.ninja.logger.enums.UserOption;
-
 public interface SearchableOptions<T extends AbstractLoggerOptions<T>> {
 
 	public String getUserOption(UserOption loggerOption);

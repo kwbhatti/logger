@@ -3,7 +3,7 @@ package com.chimpcentral;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.discovery.ninja.utils.DateHelper;
+import com.chimpcentral.date.DateHelper;
 
 public abstract class Log {
 

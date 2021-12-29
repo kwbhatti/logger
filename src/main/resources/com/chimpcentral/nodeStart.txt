@@ -1,0 +1,5 @@
+<div class="card">
+	<div class="card-header">
+	<a class="btn card-button card-pass" data-bs-toggle="collapse" href="#<scenario name goes here>"><scenario name goes here></a></div>
+	    <div id="<scenario name goes here>" class="collapse">
+	        <div class="card-body">

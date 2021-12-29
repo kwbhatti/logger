@@ -16,7 +16,8 @@
 		<surefire.plugin.version>3.0.0-M5</surefire.plugin.version>
 		<nexus.staging.maven.plugin>1.6.8</nexus.staging.maven.plugin>
 		<maven.gpg.plugin>1.6</maven.gpg.plugin>
-		<chimpcentral.ioutility.version>1.0.0</chimpcentral.ioutility.version>
+		<chimp-central.common-utils.version>1.0.0</chimp-central.common-utils.version>
+		<chimp-central.io-utility.version>1.0.1</chimp-central.io-utility.version>
 	</properties>
 	<licenses>
 		<license>
@@ -43,8 +44,13 @@
 		</dependency>
 		<dependency>
 			<groupId>com.chimp-central</groupId>
+			<artifactId>common-utils</artifactId>
+			<version>${chimp-central.common-utils.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.chimp-central</groupId>
 			<artifactId>io-utility</artifactId>
-			<version>${chimpcentral.ioutility.version}</version>
+			<version>${chimp-central.io-utility.version}</version>
 		</dependency>
 	</dependencies>
 	<profiles>
