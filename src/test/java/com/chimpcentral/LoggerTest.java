@@ -1,5 +1,9 @@
 package com.chimpcentral;
 
+import com.chimpcentral.logger.Log;
+import com.chimpcentral.logger.Logger;
+import com.chimpcentral.logger.UserOptions;
+
 public class LoggerTest {
 	public static void main(String[] args) {
 		UserOptions loggerOptions = new UserOptions()

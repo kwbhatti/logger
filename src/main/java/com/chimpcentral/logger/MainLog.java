@@ -1,4 +1,4 @@
-package com.chimpcentral;
+package com.chimpcentral.logger;
 
 public class MainLog extends Log {
 
