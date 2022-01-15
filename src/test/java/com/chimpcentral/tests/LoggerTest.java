@@ -1,4 +1,4 @@
-package com.chimpcentral;
+package com.chimpcentral.tests;
 
 import com.chimpcentral.logger.Log;
 import com.chimpcentral.logger.Logger;
@@ -36,5 +36,6 @@ public class LoggerTest {
 		class2test1log.info("i am in class 2 test log 1");
 		class1test2log.info("i am in class 1 test 2");
 		logger.flush();
+		
 	}
 }

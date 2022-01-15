@@ -34,7 +34,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:kwbhatti/logger.git</connection>
 		<developerConnection>scm:git:ssh://github.com:kwbhatti/logger.git</developerConnection>
-		<url>https://github.com/kwbhattilogger.git/tree/master</url>
+		<url>https://github.com/kwbhatti/logger.git/tree/master</url>		
 	</scm>
 	<dependencies>
 		<dependency>
