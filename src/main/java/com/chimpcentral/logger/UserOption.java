@@ -1,6 +1,6 @@
 package com.chimpcentral.logger;
 
-public enum UserOption {
+enum UserOption {
 
 	TARGET_DIR,
 	FILE_NAME,

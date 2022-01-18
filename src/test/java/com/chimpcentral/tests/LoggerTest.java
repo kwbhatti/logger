@@ -1,11 +1,11 @@
-//package com.chimpcentral.tests;
-//
+package com.chimpcentral.tests;
+
 //import com.chimpcentral.logger.Log;
 //import com.chimpcentral.logger.Logger;
 //import com.chimpcentral.logger.UserOptions;
-//
-//public class LoggerTest {
-//	public static void main(String[] args) {
+
+public class LoggerTest {
+	public static void main(String[] args) {
 //		UserOptions loggerOptions = new UserOptions()
 //											.setFilename("mytestlogs.html")
 //											.setTitle("MY TITLE")
@@ -36,6 +36,6 @@
 //		class2test1log.info("i am in class 2 test log 1");
 //		class1test2log.info("i am in class 1 test 2");
 //		logger.flush();
-//		
-//	}
-//}
+		
+	}
+}
