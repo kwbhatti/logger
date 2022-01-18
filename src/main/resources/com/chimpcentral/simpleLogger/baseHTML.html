@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+    <head>
+        <title><!-- chimp-central-title --></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <script>
+            function displayTestLog(logId) {
+                Array.from(document.getElementsByClassName("test-log")).forEach(function (element) {
+                    element.style.display = "none";
+                });
+                document.getElementById(logId).style.display = "";
+            }
+        </script>
+
+        <style>
+            .containder-heading {
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+            }  
+            .nav-button {
+                border: 0;
+                margin: 0;
+                background-color: black;
+                cursor: pointer;
+            }
+            .navigation-link {
+                border: 0;
+                margin: 0;
+                background-color: black;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            .log-list {
+                border-top: grey;
+            }
+            .log-list-link {
+                color: rgb(121, 121, 121);
+                font-weight: bold;
+            }
+            .log-list-hr {
+                margin: 4px;
+            }
+            table {
+                font-size: 12px;
+            }
+            td.warning {
+                color: red;
+            }
+        </style>
+
+    </head>
+
+    <body style="height: 100%;">
+        
+        <div class="container-fluid" style="width: 100%; height: 5px; background-color: black;"></div>
+        
+        <div class="p-2 containder-heading text-center">
+            <p style="font-size: 25px; margin: 5px;"><!-- chimp-central-heading --></p>
+            <p style="font-size: 15px; margin: 5px;"><!-- chimp-central-sub-heading --></p>
+        </div>
+        
+        <div class="container-fluid" style="width: 100%; height: 5px; background-color: black;"></div>
+
+        <div class="container-fluid" style="width: 100%; padding: 0; height: 100%;">
+            <div class="d-flex flex-row h-100">
+                <div class="p-2 h-100" style="background-color: rgb(0, 0, 0); width: 7%; height: 100%; overflow: auto;">
+                    <br>
+                    <div class="d-flex">
+                        <ul class="list-unstyled mx-auto text-center">
+                            <li>
+                                <!-- chimp-central-logo-link -->
+                            </li>
+                            <br><br>
+                            <li>
+                                <!-- chimp-central-main-log-link -->
+                            </li>
+                            <br>
+                            <!-- chimp-central-additional-links -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- chimp-central-log-list -->
+
+                <!-- chimp-central-log-container-start --><div class="p-2" style="background-color: rgb(245, 245, 245); width: 100%"><!-- chimp-central-log-container-end -->
+                    <div class="justify-content-center container" style="width: 100%; height: 100%; overflow: auto;">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">log info</th>
+                                    <th style="width: 15%;">time</th>
+                                    <th style="width: 75%;">message</th>
+                                </tr>
+                            </thead>
+                            
+                            <!-- chimp-central-log-table-body -->
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

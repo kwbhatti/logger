@@ -1,19 +1,16 @@
 package com.chimpcentral.simpleLogger;
 
-public class Log {
+public class Log extends Loggable {
+		
+	public Log(LogFile logFile, String name) {
+		super(name);
+		this.logFile = logFile;
+		this.logFile.createLogListItem(name);
+	}
 
-	private String name = null;
-	
-	public Log(String name) {
-		this.name = name;
+	@Override
+	LogFile getLogFile() {
+		return this.logFile;
 	}
 	
-	public String getName() {
-		return this.name;
-	}
-	
-	public <T> void info(T message) {
-		if (message instanceof String) System.out.println(((String) message).replaceAll("<br>", "/n"));
-		else System.out.println(message);
-	}
 }

@@ -1,11 +1,16 @@
 package com.chimpcentral.simpleLogger;
 
-public class Logger {
+import java.io.IOException;
 
-	private LoggerOptions loggerOptions = null;
+public class Logger extends Loggable {
+
+	LoggerOptions loggerOptions = null;
+	LogFile logFile = null;
 	
 	public Logger(LoggerOptions loggerOptions) {
+		super("main");
 		this.loggerOptions = loggerOptions;
+		createBaseHTMLFile();
 	}
 	
 	public Logger() {
@@ -16,8 +21,25 @@ public class Logger {
 		return this.loggerOptions;
 	}
 	
-	public Log createLog(String name) {
-		return new Log(name);
+	LogFile getLogFile() {
+		return this.logFile;
 	}
+	
+	private void createBaseHTMLFile() {
+		try {
+			logFile = new LogFile(loggerOptions);
+		} catch (IOException e) {
+			System.out.println("**********LOGGER EXCEPTION START*********");
+			System.out.println("Could not create logger");
+			e.printStackTrace();
+			System.out.println("**********LOGGER EXCEPTION END*********");
+		}
+	}
+	
+	public Log createLog(String name) {
+		return new Log(this.logFile, name);
+	}
+
+	
 	
 }
