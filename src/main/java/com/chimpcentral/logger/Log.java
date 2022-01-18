@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.chimpcentral.date.DateHelper;
 
-public abstract class Log {
+abstract class Log {
 
 	private String name = null;
 	private List<Log> nodes = new ArrayList<Log>();

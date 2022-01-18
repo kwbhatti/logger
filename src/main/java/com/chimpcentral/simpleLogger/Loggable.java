@@ -58,7 +58,7 @@ public abstract class Loggable {
 		getLogFile().log(this.logTableRowTag, getMessage(message, true));
 	}
 	
-	private void toButton(String name, String message) {
+	void toButton(String name, String message) {
 	}
 	
 	public void exception(Exception exception) {

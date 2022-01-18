@@ -1,6 +1,6 @@
 package com.chimpcentral.logger;
 
-public class Logger {
+class Logger {
 
 	private LoggerInfo loggerInfo = null;
 	public MainLog mainLog = null;
