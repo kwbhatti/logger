@@ -23,5 +23,8 @@ mvn -Pcore -Pdoc -Pgithub-deploy clean deploy
 	-will run gpg
 	-will deploy to github
 
-released simple logger 1/18/2021 
-	need to add log.tobutton method
+released simple logger 1/23/2021 
+	final log, working log
+	need to add functionalities:
+		update to node with message
+		add tests
