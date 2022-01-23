@@ -64,7 +64,7 @@ abstract class AbstractLog {
 	 *  and keeps adding 1 to the finalId which then gets appended to the Element Id.
 	 * @param baseId initial Element Id without the index of the id
 	 * @param existingIds list of existing elements for similar elements
-	 * @return
+	 * @return String value of base Id after appending the index
 	 */
 	protected String getElementId(String baseId, List<String> existingIds) {
 		String id = baseId;
