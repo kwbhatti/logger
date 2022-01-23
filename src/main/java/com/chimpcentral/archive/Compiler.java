@@ -1,4 +1,4 @@
-package com.chimpcentral.logger;
+package com.chimpcentral.archive;
 
 import java.io.IOException;
 import java.util.List;

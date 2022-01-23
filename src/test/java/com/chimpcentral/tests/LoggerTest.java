@@ -13,7 +13,7 @@ public class LoggerTest {
 //											.setSubHeading("MY TEST SUB HEADING")
 //											.setTargetDir(System.getProperty("user.dir") + "/target");
 //		Logger logger = new Logger(loggerOptions);
-//		logger.getLoggerInfo().getAllUserOptions().entrySet().stream().forEach(System.out::println);
+////		logger.getLoggerInfo().getAllUserOptions().entrySet().stream().forEach(System.out::println);
 //		String filepath = logger.getLoggerInfo().getFilepath();
 //		System.out.println(filepath);
 //		Log mainlog = logger.createLog();

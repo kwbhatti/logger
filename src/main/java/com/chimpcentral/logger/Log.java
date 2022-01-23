@@ -1,56 +1,37 @@
 package com.chimpcentral.logger;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.chimpcentral.date.DateHelper;
-
-abstract class Log {
-
-	private String name = null;
-	private List<Log> nodes = new ArrayList<Log>();
-	private StringBuilder content = new StringBuilder();
+/**
+ * Log is a public class and extends Abstract log.
+ *  And provides all the logging methods to the user.
+ * Provides the instance of a log file within the logger
+ * and should be created after creating the logger by using the following code
+ * <code>
+ * Logger mylogger = new Logger();
+ * Log log1 = mylogger.createLog("some name for log");
+ * </code>
+ * <br>Log is a sub-set of the main logger.
+ * Creating a new log for the first time would create a log list pane along with the log item.
+ * Otherwise it would only create a log list item
+ * The log list item has a link that points to the respective log table in the main logs pane
+ */
+public class Log extends AbstractLog {
 	
-	public Log(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return this.name;
-	}
-	public List<Log> getNodes() {
-		return this.nodes;
-	}
-	
-	public StringBuilder getContent() {
-		return this.content;
-	}
-	
-	public boolean hasNodes() {
-		return this.nodes.size() > 0 ? true : false;
-	}
-	
-	public NodeLog createLog(String name) {
-		NodeLog log = new NodeLog(name);
-		this.nodes.add(log);
-		return log;
-	}
-	
-	private void appendInfo(LogLevel logLevel, Object message) {
-		content.append("<tr>");
-		if (logLevel == LogLevel.INFO) content.append("<td>info</td>");
-		else if (logLevel == LogLevel.WARN) content.append("<td class=\"warning\">warning</td>");
-		content.append("<td>" + new DateHelper().getCurrentTimeStamp() + "</td>");
-		content.append("<td>" + message + "</td>");
-		content.append("</tr>");
-	}
-	
-	public void info(Object message) {
-		appendInfo(LogLevel.INFO, message);
-	}
-	
-	public void warn(Object message) {
-		appendInfo(LogLevel.WARN, message);
+	/**
+	 * Default constructor that gets called by the logger instance 
+	 * The logger instance is responsible for passing the LogFile class object to the constructor
+	 * along with the name of the log provided by the user.
+	 * @param logFile LogFile which extends the FlatFile where the content is being written to
+	 * @param name Name of the log to be created in the logger
+	 */
+	Log(LogFile logFile, String name) {
+		super(name);
+		this.logFile = logFile;
+		this.logFile.createLogListItem(name, logTableBodyId);
 	}
 
+	@Override
+	LogFile getLogFile() {
+		return this.logFile;
+	}
+	
 }

@@ -3,9 +3,9 @@ package com.chimpcentral.tests;
 import java.io.FileNotFoundException;
 import java.util.UUID;
 
-import com.chimpcentral.simpleLogger.Log;
-import com.chimpcentral.simpleLogger.Logger;
-import com.chimpcentral.simpleLogger.LoggerOptions;
+import com.chimpcentral.logger.Log;
+import com.chimpcentral.logger.Logger;
+import com.chimpcentral.logger.LoggerOptions;
 
 public class SimpleLoggerTest {
 
@@ -17,29 +17,33 @@ public class SimpleLoggerTest {
 							+ UUID.randomUUID() + UUID.randomUUID() + UUID.randomUUID();
 	}
 	
+	public static String getRandomString(String message, int count) {
+		StringBuilder sb = new StringBuilder(message);
+		for (int i = 0; i < count; i++) {
+			sb.append(getRandomString(""));
+		}
+		return sb.toString();
+	}
+	
 	public static void main(String[] args) {
 		
 		LoggerOptions loggerOptions = new LoggerOptions()
 												.setFilename("mylogs.html")
-//												.removeImages()
 												.setGithubURL("https://github.com/")
 												.setJiraURL("https://www.atlassian.com/software/jira")
+												.setMailToAddress("some@some.com")
 												.setTitle("My title")
 												.setHeading("My Heading")
-												.setSubHeading("my sub heading");
+												.setSubHeading("my sub heading")
+												.removeImages();
 		
 		Logger logger = new Logger(loggerOptions);
-		loggerOptions = logger.getLoggerOptions();
-		
-		System.out.println(loggerOptions.getTargetDir());
-		System.out.println(loggerOptions.getFilename());
-		System.out.println(loggerOptions.getFilepath());
-		System.out.println(loggerOptions.getTitle());
-		System.out.println(loggerOptions.getHeading());
-		System.out.println(loggerOptions.getSubHeading());
 		logger.info(getRandomString("in main logger"));
 		logger.info(getRandomString("in main logger"));
 		logger.warn(getRandomString("in main logger"));
+		logger.toNode("some-name", "message in main one");
+		logger.toNode("some-name", "message in main two");
+		logger.toNode("some-name", getRandomString("message in main three", 5));
 		logger.exception(new FileNotFoundException("some file was not found"));
 		logger.info(getRandomString("in main logger"));
 
@@ -57,6 +61,8 @@ public class SimpleLoggerTest {
 
 		Log log3 = logger.createLog("Log 3");
 		log3.info(getRandomString("in test 3 log"));
+		log3.toNode("some-name", "message in log3 one");
+		log3.toNode("some-name", "message in log3 two");
 		log3.warn(getRandomString("in test 3 log"));
 		log3.warn(getRandomString("in test 3 log"));
 		log3.info(getRandomString("in test 3 log"));

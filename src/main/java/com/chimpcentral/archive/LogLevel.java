@@ -1,4 +1,4 @@
-package com.chimpcentral.logger;
+package com.chimpcentral.archive;
 
 public enum LogLevel {
 

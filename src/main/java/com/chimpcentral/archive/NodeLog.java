@@ -1,4 +1,4 @@
-package com.chimpcentral.logger;
+package com.chimpcentral.archive;
 
 public class NodeLog extends Log {
 
