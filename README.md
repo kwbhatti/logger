@@ -178,6 +178,46 @@ Examples:\
 `mySubLog3.toNode("name of node", "message in sub log 3");`\
 
 
+## Examples
+
+Here is some sample code to get started. Passing the 
+instance of LoggerOptions is optional in the below examples.
+
+### Sinlge Log example ###
+
+`LoggerOptions loggerOptions = new LoggerOptions()`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.setFilename("log example 1.html")`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.setGithubURL("https://github.com/")`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.setJiraURL("https://www.atlassian.com/software/jira")`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.setMailToAddress("some@some.com")`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.setTitle("Example Log")`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.setHeading("Single log example")`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.setSubHeading("logs for demo purpose")`\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`.removeImages();`
+
+`Logger logger = new Logger();`\
+`logger.info("some random info text in log");`\
+`logger.info("some random info text in log");`\
+`logger.info("some random info text in log");`\
+`logger.warn("some random warning text in log");`\
+`logger.info("some random info text in log");`\
+`logger.exception(new Exception("some exception in log"));`\
+`logger.info("some random info text in log");`\
+`logger.toNode("foo", "some random info text in logger node foo");`\
+`logger.info("some random info text in log");`\
+`logger.toNode("bar", "some random info text in logger node bar");`\
+`logger.warn("some random warning text in log");`\
+`logger.info("some random info text in log");`\
+
+Above code would create a new logger with the provided logger
+options and add the logs to the main log. Calling the removeImages
+method would also remove the images from the log file. See below.
+
+![Sinlge log](https://raw.githubusercontent.com/kwbhatti/logger/master/src/main/resources/com/chimpcentral/examples/sinlge-log-no-images.png)
+
+
+
+
 
 ## Authors
 
