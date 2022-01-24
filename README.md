@@ -117,6 +117,66 @@ Below are a few examples of initializing LoggerOptions.
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
  `.removeImages();`
 
+### Create sub log ###
+Sub log is log within the main logger. A new log can be
+instantiated by calling the createLog method from the logger
+instance. Creating a sub log creates a list item pane in the 
+main logger. Each log name is displayed in the log list 
+and is linked to the table for that specific log. Logger is not 
+limited to a single sub log, but many sub logs can be created 
+inside a logger.
+
+`Log mySubLog1 = logger.createLog("Sub Log 1");`\
+`Log mySubLog2 = logger.createLog("Sub Log 2");`\
+`Log mySubLog3 = logger.createLog("Sub Log 3");`
+
+Before creating a sub log, the log table container width expands 
+to 95% of the page, but create a sub log creates a log list 
+which takes up to 20% and reduces the log table container width
+to 75%.
+
+### Logging Methods ###
+Log methods are available at both for the logger (main log) and 
+the log (sub log) instance. See below for details and examples.
+
+#### Info ####
+Creates a log row with timestamp and message.\
+Examples:\
+`logger.info("this is a message in the main log");`\
+`mySubLog1.info("this is a message in the sub log 1")`\
+`mySubLog2.info("this is a message in the sub log 2")`\
+
+#### Warning ####
+Creates a log row with timestamp and message, and the word
+warning is in red color.\
+Examples:\
+`logger.warn("this is a warning in the main log");`\
+`mySubLog3.info("this is a warning in the sub log 3")`\
+`mySubLog2.info("this is a warning in the sub log 2")`
+
+#### Exception ####
+Creates a log row with the exception method, and the word 
+warning is in red color. Logs the following:
+- exception message
+- exception cause
+- exception class name
+- exception stack trace
+Examples:\
+`logger.exception(new Exception("some exception message in main log"));`\
+`mySubLog1.exception(new Exception("some exception message in sub log 1"));`
+
+#### Info To Node ####
+Create a log row, and instead of the whole message, creates 
+two containers that act as an accodion. the first container 
+displays the name of the node, and displays the full message 
+when clicked. Great for organization, which allows to view 
+the log in a more compact view. General uses are to use for 
+data base query ResultSet. API request and responses.\
+Examples:\
+`logger.toNode("name of node", "message in main log");`\
+`mySubLog3.toNode("name of node", "message in sub log 3");`\
+
+
 
 ## Authors
 
