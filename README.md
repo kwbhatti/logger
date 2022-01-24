@@ -161,6 +161,7 @@ warning is in red color. Logs the following:
 - exception cause
 - exception class name
 - exception stack trace\
+
 Examples:\
 `logger.exception(new Exception("some exception message in main log"));`\
 `mySubLog1.exception(new Exception("some exception message in sub log 1"));`
