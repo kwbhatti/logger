@@ -28,6 +28,31 @@ public class SimpleLoggerTest {
 	public static void main(String[] args) {
 		
 		LoggerOptions loggerOptions = new LoggerOptions()
+				.setFilename("log examples.html")
+				.setGithubURL("https://github.com/")
+				.setJiraURL("https://www.atlassian.com/software/jira")
+				.setMailToAddress("some@some.com")
+				.setTitle("Example Log")
+				.setHeading("Single log example")
+				.setSubHeading("logs for demo purpose")
+				.removeImages();
+		
+		Logger logger = new Logger(loggerOptions);
+		logger.info("some random info text in log");
+		logger.info("some random info text in log");
+		logger.info("some random info text in log");
+		logger.warn("some random warning text in log");
+		logger.info("some random info text in log");
+		logger.exception(new Exception("some exception in log"));
+		logger.info("some random info text in log");
+		logger.toNode("foo", "some random info text in logger node foo");
+		logger.info("some random info text in log");
+		logger.toNode("bar", "some random info text in logger node bar");
+		logger.warn("some random warning text in log");
+		logger.info("some random info text in log");
+			
+		/*
+		LoggerOptions loggerOptions = new LoggerOptions()
 												.setFilename("mylogs.html")
 												.setGithubURL("https://github.com/")
 												.setJiraURL("https://www.atlassian.com/software/jira")
@@ -78,6 +103,6 @@ public class SimpleLoggerTest {
 		logger.warn(getRandomString("in main logger"));
 		log4.warn(getRandomString("in test 4 log"));
 		log3.warn(getRandomString("in test 3 log"));
-
+		 */
 	}
 }
