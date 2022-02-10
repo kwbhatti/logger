@@ -54,7 +54,7 @@ public class SimpleLoggerTest {
 		*/
 		
 		LoggerOptions loggerOptions = new LoggerOptions()
-												.setFilename("mylogs2.html")
+												.setFilename("mylogs.html")
 												.setGithubURL("https://github.com/")
 												.setJiraURL("https://www.atlassian.com/software/jira")
 												.setMailToAddress("some@some.com")
