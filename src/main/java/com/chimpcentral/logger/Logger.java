@@ -65,11 +65,11 @@ public class Logger extends AbstractLog {
 		try {
 			logFile = new LogFile(loggerOptions);
 		} catch (IOException e) {
-			System.out.println("**********CHIMP CENTRAL EXCEPTION START*********");
-			System.out.println("Could not create log file. Make sure that the file does not already exist. Otherwise: ");
-			System.out.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println("Could not create log file. Make sure that the file does not already exist. Otherwise: ");
+			System.err.println("Please notify to test-monkey@chimp-cental.com");
 			e.printStackTrace();
-			System.out.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
 		}
 	}
 	

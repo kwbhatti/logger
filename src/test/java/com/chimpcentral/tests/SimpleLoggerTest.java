@@ -27,6 +27,7 @@ public class SimpleLoggerTest {
 	
 	public static void main(String[] args) {
 		
+		/*
 		LoggerOptions loggerOptions = new LoggerOptions()
 				.setFilename("log examples.html")
 				.setGithubURL("https://github.com/")
@@ -50,10 +51,10 @@ public class SimpleLoggerTest {
 		logger.toNode("bar", "some random info text in logger node bar");
 		logger.warn("some random warning text in log");
 		logger.info("some random info text in log");
-			
-		/*
+		*/
+		
 		LoggerOptions loggerOptions = new LoggerOptions()
-												.setFilename("mylogs.html")
+												.setFilename("mylogs2.html")
 												.setGithubURL("https://github.com/")
 												.setJiraURL("https://www.atlassian.com/software/jira")
 												.setMailToAddress("some@some.com")
@@ -103,6 +104,6 @@ public class SimpleLoggerTest {
 		logger.warn(getRandomString("in main logger"));
 		log4.warn(getRandomString("in test 4 log"));
 		log3.warn(getRandomString("in test 3 log"));
-		 */
+		 
 	}
 }

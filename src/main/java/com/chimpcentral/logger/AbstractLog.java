@@ -125,7 +125,7 @@ abstract class AbstractLog {
 	 * @param isWarning boolean if the message should be logged as warning
 	 * @return
 	 */
-	private String getMessage(String message, boolean isWarning) {
+	private <T> String getMessage(T message, boolean isWarning) {
 		String timestamp = new DateHelper().getCurrentTimeStamp();
 		StringBuilder messageBuilder = new StringBuilder()
 				.append("<tr>");
@@ -142,7 +142,7 @@ abstract class AbstractLog {
 	 * Public method to log information to the log
 	 * @param message String message to be logged
 	 */
-	public void info(String message) {
+	public <T> void info(T message) {
 		if (!hasTableBody) createTableBody();
 		getLogFile().log(this.logTableRowTag, getMessage(message, false));
 	}
@@ -152,7 +152,7 @@ abstract class AbstractLog {
 	 *  The warning text itself is logged in red color.
 	 * @param message String message to be logged
 	 */
-	public void warn(String message) {
+	public <T>void warn(T message) {
 		if (!hasTableBody) createTableBody();
 		getLogFile().log(this.logTableRowTag, getMessage(message, true));
 	}
@@ -168,12 +168,12 @@ abstract class AbstractLog {
 	 * @param name String name to be display for the node
 	 * @param message String message for the node body
 	 */
-	public void toNode(String name, String message) {
+	public <T> void toNode(String name, T message) {
 		String logCollapsibleId = getElementId(logTableBodyId + "-name", collapsibleIds);
 		String collapsibleHTML = logFileHelper.getlogCollapsibleHTML();
 		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleTopTextTag, name);
 		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleBottomIdTag, logCollapsibleId);
-		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleBottomTextTag, message);
+		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleBottomTextTag, String.valueOf(message));
 		info(collapsibleHTML);
 	}
 	

@@ -28,3 +28,7 @@ released simple logger 1/23/2021
 	need to add functionalities:
 		update to node with message
 		add tests
+
+released simple logger (added docs) 1/23/2021 
+	added README.txt file information
+	still needs more to be added

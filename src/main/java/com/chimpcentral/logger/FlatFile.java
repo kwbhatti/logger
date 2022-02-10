@@ -34,11 +34,11 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 		try {
 			super.appendContent(content);
 		} catch (IOException e) {
-			System.out.println("**********CHIMP CENTRAL EXCEPTION START*********");
-			System.out.println("Could not append content, this is an internal issue with chimp cental logger");
-			System.out.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println("Could not append content, this is an internal issue with chimp cental logger");
+			System.err.println("Please notify to test-monkey@chimp-cental.com");
 			e.printStackTrace();
-			System.out.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
 		}
 		return this;
 	}
@@ -52,11 +52,11 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 		try {
 			return super.getContent();
 		} catch (IOException e) {
-			System.out.println("**********CHIMP CENTRAL EXCEPTION START*********");
-			System.out.println("Could not get content, this is an internal issue with chimp cental logger");
-			System.out.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println("Could not get content, this is an internal issue with chimp cental logger");
+			System.err.println("Please notify to test-monkey@chimp-cental.com");
 			e.printStackTrace();
-			System.out.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
 		}
 		return null;
 	}
@@ -86,11 +86,11 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 		try {
 			super.clearContent();
 		} catch (IOException e) {
-			System.out.println("**********CHIMP CENTRAL EXCEPTION START*********");
-			System.out.println("Could not clear content, this is an internal issue with chimp cental logger");
-			System.out.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println("Could not clear content, this is an internal issue with chimp cental logger");
+			System.err.println("Please notify to test-monkey@chimp-cental.com");
 			e.printStackTrace();
-			System.out.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
 		}
 		return this;
 	}
