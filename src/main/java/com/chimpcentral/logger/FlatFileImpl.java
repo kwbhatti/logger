@@ -37,7 +37,6 @@ class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not append content, this is an internal issue with chimp cental logger");
 			System.err.println(Constants.errorEmailMessage);
-			e.printStackTrace();
 			System.err.println(Constants.errorEndMessage);
 		}
 		return this;
@@ -55,7 +54,6 @@ class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not get content, this is an internal issue with chimp cental logger");
 			System.err.println(Constants.errorEmailMessage);
-			e.printStackTrace();
 			System.err.println(Constants.errorEndMessage);
 		}
 		return null;
@@ -89,7 +87,6 @@ class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not clear content, this is an internal issue with chimp cental logger");
 			System.err.println(Constants.errorEmailMessage);
-			e.printStackTrace();
 			System.err.println(Constants.errorEndMessage);
 		}
 		return this;

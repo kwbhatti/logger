@@ -2,6 +2,9 @@ package com.chimpcentral.logger;
 
 import java.io.IOException;
 
+import com.chimpcentral.io.FileStatus;
+import com.chimpcentral.io.FlatFile;
+
 /**
  * Logger is the main class to create the log.
  * <br>Extends AbstractLog class and provides all the logging functionality.
@@ -55,6 +58,11 @@ public class Logger extends AbstractLog {
 		return this.logFile;
 	}
 	
+	private void deleteExistingLogFile() throws IOException {
+		if (new FlatFile(loggerOptions.getFilepath(), FileStatus.NA).exists()) 
+			new FlatFile(loggerOptions.getFilepath(), FileStatus.EXISTING).delete();
+	}
+	
 	/**
 	 * Creates new instance of the LogFile class with Logger Options.
 	 *  If an IOException is thrown notifies the user by logging 
@@ -62,12 +70,12 @@ public class Logger extends AbstractLog {
 	 */
 	private void createBaseHTMLFile() {
 		try {
+			deleteExistingLogFile();
 			logFile = new LogFile(loggerOptions);
 		} catch (IOException e) {
 			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not create log file. Make sure that the file does not already exist. Otherwise: ");
 			System.err.println(Constants.errorEmailMessage);
-			e.printStackTrace();
 			System.err.println(Constants.errorEndMessage);
 		}
 	}
