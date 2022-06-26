@@ -1,8 +1,5 @@
 package com.chimpcentral.logger;
 
-import java.io.IOException;
-
-import com.chimpcentral.io.FileStatus;
 import com.chimpcentral.logger.Constants.AdditionalLink;
 
 /**
@@ -14,30 +11,13 @@ import com.chimpcentral.logger.Constants.AdditionalLink;
  *
  */
 final class LogFileHelper {
-
-	/**
-	 * Handles exception when creating new instance of FlatFile.
-	 * <br>Wraps the new FlatFile(filepath, filestatus)
-	 *  and is only used by internal methods to read the existing files.
-	 * @param Filepath Path for the file to be created FlatFile instance of
-	 * @return Return FlatFile object. Returns null if the file is not found.
-	 */
-	private FlatFileImpl getFile(String filepath) {
-		try {
-			return new FlatFileImpl(filepath, FileStatus.EXISTING);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
 	
 	/**
 	 * Return content from the base HTML file in resources folder
 	 * @return base HTML as String
 	 */
 	String getBaseHTML() {
-		String content = getFile(Filepaths.baseHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.BASE_HTML;
 	}
 	
 	/**
@@ -45,8 +25,7 @@ final class LogFileHelper {
 	 * @return logo linkHTML as String
 	 */
 	String getLogoLinkHTML() {
-		String content = getFile(Filepaths.logoLinkHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.LOGO_LINK;
 	}
 	
 	/**
@@ -54,8 +33,7 @@ final class LogFileHelper {
 	 * @return main log text link HTML as String
 	 */
 	String getMainlogTextLinkHTML() {
-		String content = getFile(Filepaths.mainlogTextLinkHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.MAIN_LOG_TEXT_LINK;
 	}
 	
 	/**
@@ -64,7 +42,7 @@ final class LogFileHelper {
 	 * @return main log image link HTML as String
 	 */
 	String getMainlogImageLinkHTML() {
-		String content = getFile(Filepaths.mainlogImageLinkHTMLFilepath).getContent();
+		String content = BaseHTMLContent.MAIN_LOG_IMAGE_LINK;
 		content = content.replace(Tags.mainLogLinkSrcURLTag, Constants.mainLogImageSrcURL);
 		return content;
 	}
@@ -75,7 +53,7 @@ final class LogFileHelper {
 	 * @return additional text link HTML as String
 	 */
 	String getAdditionalTextLinkHTML(AdditionalLink link, String href) {
-		String content = getFile(Filepaths.additionalTextLinkHTMLFilepath).getContent();
+		String content = BaseHTMLContent.ADDITIONAL_TEXT_LINK;
 		content = content.replace(Tags.additionalLinkHrefTag, href);
 		content = content.replace(Tags.additionalLinkNameTag, link.value);
 		return content;
@@ -87,7 +65,7 @@ final class LogFileHelper {
 	 * @return additional image link HTML as String
 	 */
 	String getAdditionalImageLinkHTML(AdditionalLink link, String href) {
-		String content = getFile(Filepaths.additionalImageLinkHTMLFilepath).getContent();
+		String content = BaseHTMLContent.ADDITONAL_IMAGE_LINK;
 		content = content.replace(Tags.additionalLinkHrefTag, href);
 		content = content.replace(Tags.additionalLinkSrcURLTag, link.srcURL);
 		return content;
@@ -98,8 +76,7 @@ final class LogFileHelper {
 	 * @return log list container HTML as String
 	 */
 	String getLoglistContainerHTML() {
-		String content = getFile(Filepaths.loglistContainerHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.LOG_LIST_CONTAINER_HTML;
 	}
 	
 	/**
@@ -107,8 +84,7 @@ final class LogFileHelper {
 	 * @return log container without log list HTML as String
 	 */
 	String getLogContainerWithoutLoglistHTML() {
-		String content = getFile(Filepaths.logContainerWithoutLoglistHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.LOG_CONTAINER_WITHOUT_LOG_LIST_HTML;
 	}
 	
 	/**
@@ -116,8 +92,7 @@ final class LogFileHelper {
 	 * @return log container with log list HTML as String
 	 */
 	String getLogContainerWithLoglistHTML() {
-		String content = getFile(Filepaths.logContainerWithLoglistHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.LOG_CONTAINER_WITH_LOGLIST_HTML;
 	}
 	
 	/**
@@ -125,8 +100,7 @@ final class LogFileHelper {
 	 * @return log list item HTML as String
 	 */
 	String getLogListItemHTML() {
-		String content = getFile(Filepaths.loglistItemHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.LOG_LIST_ITEM_HTML;
 	}
 	
 	/**
@@ -134,8 +108,7 @@ final class LogFileHelper {
 	 * @return log table body HTML as String
 	 */
 	String getLogTableBodyHTML() {
-		String content = getFile(Filepaths.logTableBodyHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.LOG_TABLE_BODY_HTML;
 	}
 	
 	/**
@@ -143,7 +116,6 @@ final class LogFileHelper {
 	 * @return log collapsible HTML as String
 	 */
 	String getlogCollapsibleHTML() {
-		String content = getFile(Filepaths.logCollapsibleHTMLFilepath).getContent();
-		return content;
+		return BaseHTMLContent.LOG_COLLAPSIBLE_HTML;
 	}
 }

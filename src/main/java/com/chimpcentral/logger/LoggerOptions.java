@@ -107,7 +107,7 @@ public class LoggerOptions {
 	 * Returns log absolute log file path
 	 * @return String value of log file path
 	 */
-	String getFilepath() {
+	public String getFilepath() {
 		return filepath;
 	}
 	

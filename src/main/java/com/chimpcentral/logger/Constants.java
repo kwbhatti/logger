@@ -11,6 +11,9 @@ final class Constants {
 	private Constants() {
 	}
 	
+	static final String userDir = System.getProperty("user.dir");
+
+	static final String GITHUB_SRC_URL = "https://raw.githubusercontent.com/kwbhatti/logger/master/src/main/resources/com/chimpcentral";
 	/*
 	 * Messages to print when an exception is thrown during execution (start/end)
 	 */
@@ -21,11 +24,11 @@ final class Constants {
 	/*
 	 * Target Directory where the log file will be created
 	 */
-	static final String targetDir = Filepaths.userDir + "/target";
+	static final String targetDir = userDir + "/target";
 	/*
 	 * Source URL for Chimp Central logo source which resides in the project
 	 */
-	static final String logoSrcURL = "https://raw.githubusercontent.com/kwbhatti/logger/master/src/main/resources/com/chimpcentral/logo-white.png";
+	static final String logoSrcURL = GITHUB_SRC_URL + "/logo-white.png";
 	/*
 	 * URL for Chimp Cental website
 	 */
@@ -49,7 +52,7 @@ final class Constants {
 	/*
 	 * Source URL for main logs icon
 	 */
-	static final String mainLogImageSrcURL = "https://raw.githubusercontent.com/kwbhatti/logger/master/src/main/resources/com/chimpcentral/log-2.png";
+	static final String mainLogImageSrcURL = GITHUB_SRC_URL + "/log-2.png";
 	/*
 	 * Name of the main logs 
 	 * This name gets used for click function for main log button and for the main logs table id
@@ -62,9 +65,9 @@ final class Constants {
 	 * srcURL provies the Source URL for the icons
 	 */
 	enum AdditionalLink {
-		GITHUB ("github", "https://raw.githubusercontent.com/kwbhatti/logger/master/src/main/resources/com/chimpcentral/github-4.png"),
-		JIRA ("jira", "https://raw.githubusercontent.com/kwbhatti/logger/master/src/main/resources/com/chimpcentral/jira-1.png"),
-		EMAIL ("email", "https://raw.githubusercontent.com/kwbhatti/logger/master/src/main/resources/com/chimpcentral/email-1.png");
+		GITHUB ("github", GITHUB_SRC_URL + "/github-4.png"),
+		JIRA ("jira", GITHUB_SRC_URL + "/jira-1.png"),
+		EMAIL ("email", GITHUB_SRC_URL + "/email-1.png");
 		
 		String value = null;
 		String srcURL = null;
