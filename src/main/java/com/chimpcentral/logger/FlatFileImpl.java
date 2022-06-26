@@ -12,7 +12,7 @@ import com.chimpcentral.io.FileStatus;
  * @author kbhatti
  *
  */
-class FlatFile extends com.chimpcentral.io.FlatFile {
+class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 
 	/**
 	 * Default Constructor which sets the filepath, and the status for this filepath
@@ -20,7 +20,7 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 	 * @param fileStatus Status for the file if it is a NEW file being created, an EXISTING file, for NA does not check the status
 	 * @throws IOException exception thrown in case of file not found
 	 */
-	FlatFile(String filepath, FileStatus fileStatus) throws IOException {
+	FlatFileImpl(String filepath, FileStatus fileStatus) throws IOException {
 		super(filepath, fileStatus);
 	}
 	
@@ -30,15 +30,15 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 	 * <br>Wraps the super class method by surrounding with a try catch block
 	 */
 	@Override
-	public FlatFile appendContent(String content) {
+	public FlatFileImpl appendContent(String content) {
 		try {
 			super.appendContent(content);
 		} catch (IOException e) {
-			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not append content, this is an internal issue with chimp cental logger");
-			System.err.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println(Constants.errorEmailMessage);
 			e.printStackTrace();
-			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println(Constants.errorEndMessage);
 		}
 		return this;
 	}
@@ -52,11 +52,11 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 		try {
 			return super.getContent();
 		} catch (IOException e) {
-			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not get content, this is an internal issue with chimp cental logger");
-			System.err.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println(Constants.errorEmailMessage);
 			e.printStackTrace();
-			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println(Constants.errorEndMessage);
 		}
 		return null;
 	}
@@ -70,7 +70,7 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 	 * @param newString sub-string that oldString needs to be replaced with in the file
 	 * @return returns this class after modifying the content in this FlatFile
 	 */
-	FlatFile replaceContent(String oldString, String newString) {
+	FlatFileImpl replaceContent(String oldString, String newString) {
 		String existingContent = getContent();
 		this.clearContent();
 		this.appendContent(existingContent.replace(oldString, newString));
@@ -82,15 +82,15 @@ class FlatFile extends com.chimpcentral.io.FlatFile {
 	 * <br>Wraps the super class method by surrounding with a try catch block
 	 */
 	@Override
-	public FlatFile clearContent() {
+	public FlatFileImpl clearContent() {
 		try {
 			super.clearContent();
 		} catch (IOException e) {
-			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not clear content, this is an internal issue with chimp cental logger");
-			System.err.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println(Constants.errorEmailMessage);
 			e.printStackTrace();
-			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println(Constants.errorEndMessage);
 		}
 		return this;
 	}

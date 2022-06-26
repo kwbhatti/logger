@@ -1,8 +1,8 @@
 package com.chimpcentral.archive;
 
-public class MainLog extends Log {
+class MainLog extends Log {
 
-	public MainLog() {
+	MainLog() {
 		super("mainlog");
 	}
 }

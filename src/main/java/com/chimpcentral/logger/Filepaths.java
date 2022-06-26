@@ -8,6 +8,9 @@ package com.chimpcentral.logger;
  */
 class Filepaths {
 
+	private Filepaths() {
+	}
+	
 	/*
 	 * Path to user directory
 	 * Path to the resources folder for logger

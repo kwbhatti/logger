@@ -11,7 +11,7 @@ import com.chimpcentral.logger.Constants.AdditionalLink;
  * @author kbhatti
  *
  */
-final class LogFile extends FlatFile {
+final class LogFile extends FlatFileImpl {
 	
 	LoggerOptions loggerOptions = null;
 	LogFileHelper logFileHelper = null;

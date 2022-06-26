@@ -14,7 +14,6 @@ import java.io.IOException;
 public class Logger extends AbstractLog {
 
 	LoggerOptions loggerOptions = null;
-	LogFile logFile = null;
 	
 	/**
 	 * Allows the user to provide logger options via LoggerOptions class instance.
@@ -65,11 +64,11 @@ public class Logger extends AbstractLog {
 		try {
 			logFile = new LogFile(loggerOptions);
 		} catch (IOException e) {
-			System.err.println("**********CHIMP CENTRAL EXCEPTION START*********");
+			System.err.println(Constants.errorStartMessage);
 			System.err.println("Could not create log file. Make sure that the file does not already exist. Otherwise: ");
-			System.err.println("Please notify to test-monkey@chimp-cental.com");
+			System.err.println(Constants.errorEmailMessage);
 			e.printStackTrace();
-			System.err.println("**********CHIMP CENTRAL EXCEPTION END*********");
+			System.err.println(Constants.errorEndMessage);
 		}
 	}
 	

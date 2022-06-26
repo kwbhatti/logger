@@ -1,6 +1,6 @@
 package com.chimpcentral.archive;
 
-public enum LogLevel {
+enum LogLevel {
 
 	WARN,
 	INFO

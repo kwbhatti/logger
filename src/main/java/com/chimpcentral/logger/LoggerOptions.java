@@ -116,7 +116,7 @@ public class LoggerOptions {
 	 * @return instance of the LoggerOptions
 	 */
 	private LoggerOptions setFilepath() {
-		this.filepath = getTargetDir() + "/" + getFilename();
+		this.filepath = getTargetDir() + System.getProperty("file.separator") + getFilename();
 		return this;
 	}
 	

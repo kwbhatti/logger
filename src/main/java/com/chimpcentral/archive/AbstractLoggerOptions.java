@@ -3,7 +3,7 @@ package com.chimpcentral.archive;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AbstractLoggerOptions<T> {
+class AbstractLoggerOptions<T> {
 	
 	protected Map<UserOption, String> userOptionsMap = new HashMap<UserOption, String>();
 	protected String targetDir = null;

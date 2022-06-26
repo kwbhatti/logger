@@ -6,7 +6,7 @@ import java.util.List;
 import com.chimpcentral.io.FileStatus;
 import com.chimpcentral.io.FlatFile;
 
-public class Compiler {
+class Compiler {
 
 	private Logger logger = null;
 	private LoggerInfo loggerInfo = null;

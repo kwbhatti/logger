@@ -11,7 +11,7 @@ abstract class Log {
 	private List<Log> nodes = new ArrayList<Log>();
 	private StringBuilder content = new StringBuilder();
 	
-	public Log(String name) {
+	Log(String name) {
 		this.name = name;
 	}
 	

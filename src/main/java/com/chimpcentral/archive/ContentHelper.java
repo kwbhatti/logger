@@ -2,7 +2,7 @@ package com.chimpcentral.archive;
 
 import java.io.IOException;
 
-public class ContentHelper {
+class ContentHelper {
 
 	private String resourcesDir = null;
 	private static final String BASE_START_FILE_NAME = "baseStart.txt";

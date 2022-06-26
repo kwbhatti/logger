@@ -34,10 +34,10 @@ abstract class AbstractLog {
 	protected LogFileHelper logFileHelper = null;
 	protected String name = null;
 	protected String logTableBodyId = null;
-	protected List<String> logTableBodyIds = new ArrayList<String>();
+	protected List<String> logTableBodyIds = new ArrayList<>();
 	protected String logTableRowTag = null;
 	private boolean hasTableBody = false;
-	protected List<String> collapsibleIds = new ArrayList<String>();
+	protected List<String> collapsibleIds = new ArrayList<>();
 	
 	/**
 	 * Constructor only used by Logger and Log classes.

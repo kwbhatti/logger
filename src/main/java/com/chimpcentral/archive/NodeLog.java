@@ -1,8 +1,8 @@
 package com.chimpcentral.archive;
 
-public class NodeLog extends Log {
+class NodeLog extends Log {
 
-	public NodeLog(String name) {
+	NodeLog(String name) {
 		super(name);
 	}
 }

@@ -8,6 +8,9 @@ package com.chimpcentral.logger;
  */
 final class Tags {
 
+	private Tags() {
+	}
+	
 	/*
 	 * top container element tags
 	 */

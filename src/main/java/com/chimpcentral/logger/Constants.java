@@ -8,6 +8,16 @@ package com.chimpcentral.logger;
  */
 final class Constants {
 
+	private Constants() {
+	}
+	
+	/*
+	 * Messages to print when an exception is thrown during execution (start/end)
+	 */
+	static final String errorStartMessage = "********** CHIMP CENTRAL EXCEPTION START *********";
+	static final String errorEndMessage = "********** CHIMP CENTRAL EXCEPTION END *********";
+	static final String errorEmailMessage = "Please notify to test-monkey@chimp-cental.com";
+
 	/*
 	 * Target Directory where the log file will be created
 	 */

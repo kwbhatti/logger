@@ -22,9 +22,9 @@ final class LogFileHelper {
 	 * @param Filepath Path for the file to be created FlatFile instance of
 	 * @return Return FlatFile object. Returns null if the file is not found.
 	 */
-	private FlatFile getFile(String filepath) {
+	private FlatFileImpl getFile(String filepath) {
 		try {
-			return new FlatFile(filepath, FileStatus.EXISTING);
+			return new FlatFileImpl(filepath, FileStatus.EXISTING);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

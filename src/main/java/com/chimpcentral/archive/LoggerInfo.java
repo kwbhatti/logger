@@ -2,7 +2,7 @@ package com.chimpcentral.archive;
 
 import java.util.Arrays;
 
-public class LoggerInfo extends AbstractLoggerOptions<LoggerInfo> implements SearchableOptions<LoggerInfo> {
+class LoggerInfo extends AbstractLoggerOptions<LoggerInfo> implements SearchableOptions<LoggerInfo> {
 
 	private static final String USER_DIR = System.getProperty("user.dir");
 	private static final String RESOURCES_DIR = USER_DIR + "/src/main/resources/com/chimpcentral";

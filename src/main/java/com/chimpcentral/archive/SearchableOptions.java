@@ -2,7 +2,7 @@ package com.chimpcentral.archive;
 
 import java.util.Map;
 
-public interface SearchableOptions<T extends AbstractLoggerOptions<T>> {
+interface SearchableOptions<T extends AbstractLoggerOptions<T>> {
 
 	public String getUserOption(UserOption loggerOption);
 
