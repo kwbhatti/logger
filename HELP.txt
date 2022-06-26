@@ -32,3 +32,6 @@ released simple logger 1/23/2021
 released simple logger (added docs) 1/23/2021 
 	added README.txt file information
 	still needs more to be added
+	
+released simple logger (removed old files) 6/26/2022
+	removed all the old files that had the older implementation
