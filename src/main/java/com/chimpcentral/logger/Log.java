@@ -30,7 +30,7 @@ public class Log extends AbstractLog {
 	}
 
 	@Override
-	LogFile getLogFile() {
+	synchronized LogFile getLogFile() {
 		return this.logFile;
 	}
 	

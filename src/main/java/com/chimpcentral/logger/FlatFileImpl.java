@@ -30,7 +30,7 @@ class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 	 * <br>Wraps the super class method by surrounding with a try catch block
 	 */
 	@Override
-	public FlatFileImpl appendContent(String content) {
+	public synchronized FlatFileImpl appendContent(String content) {
 		try {
 			super.appendContent(content);
 		} catch (IOException e) {
@@ -47,7 +47,7 @@ class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 	 * <br>Wraps the super class method by surrounding with a try catch block
 	 */
 	@Override
-	public String getContent() {
+	public synchronized String getContent() {
 		try {
 			return super.getContent();
 		} catch (IOException e) {
@@ -68,7 +68,7 @@ class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 	 * @param newString sub-string that oldString needs to be replaced with in the file
 	 * @return returns this class after modifying the content in this FlatFile
 	 */
-	FlatFileImpl replaceContent(String oldString, String newString) {
+	synchronized FlatFileImpl replaceContent(String oldString, String newString) {
 		String existingContent = getContent();
 		this.clearContent();
 		this.appendContent(existingContent.replace(oldString, newString));
@@ -80,7 +80,7 @@ class FlatFileImpl extends com.chimpcentral.io.FlatFile {
 	 * <br>Wraps the super class method by surrounding with a try catch block
 	 */
 	@Override
-	public FlatFileImpl clearContent() {
+	public synchronized FlatFileImpl clearContent() {
 		try {
 			super.clearContent();
 		} catch (IOException e) {

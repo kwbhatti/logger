@@ -16,7 +16,7 @@ final class LogFileHelper {
 	 * Return content from the base HTML file in resources folder
 	 * @return base HTML as String
 	 */
-	String getBaseHTML() {
+	synchronized String getBaseHTML() {
 		return BaseHTMLContent.BASE_HTML;
 	}
 	
@@ -24,7 +24,7 @@ final class LogFileHelper {
 	 * Return content from the logo link HTML file in resources folder
 	 * @return logo linkHTML as String
 	 */
-	String getLogoLinkHTML() {
+	synchronized String getLogoLinkHTML() {
 		return BaseHTMLContent.LOGO_LINK;
 	}
 	
@@ -32,7 +32,7 @@ final class LogFileHelper {
 	 * Return content from the main log text link HTML file in resources folder
 	 * @return main log text link HTML as String
 	 */
-	String getMainlogTextLinkHTML() {
+	synchronized String getMainlogTextLinkHTML() {
 		return BaseHTMLContent.MAIN_LOG_TEXT_LINK;
 	}
 	
@@ -41,7 +41,7 @@ final class LogFileHelper {
 	 * Gets the file content and then replaces the value for main log image source URL.
 	 * @return main log image link HTML as String
 	 */
-	String getMainlogImageLinkHTML() {
+	synchronized String getMainlogImageLinkHTML() {
 		String content = BaseHTMLContent.MAIN_LOG_IMAGE_LINK;
 		content = content.replace(Tags.mainLogLinkSrcURLTag, Constants.mainLogImageSrcURL);
 		return content;
@@ -52,7 +52,7 @@ final class LogFileHelper {
 	 * Gets the file content and then replaces the value for href and the text of the link.
 	 * @return additional text link HTML as String
 	 */
-	String getAdditionalTextLinkHTML(AdditionalLink link, String href) {
+	synchronized String getAdditionalTextLinkHTML(AdditionalLink link, String href) {
 		String content = BaseHTMLContent.ADDITIONAL_TEXT_LINK;
 		content = content.replace(Tags.additionalLinkHrefTag, href);
 		content = content.replace(Tags.additionalLinkNameTag, link.value);
@@ -64,7 +64,7 @@ final class LogFileHelper {
 	 * Gets the file content and then replaces the value for href and the source URLs.
 	 * @return additional image link HTML as String
 	 */
-	String getAdditionalImageLinkHTML(AdditionalLink link, String href) {
+	synchronized String getAdditionalImageLinkHTML(AdditionalLink link, String href) {
 		String content = BaseHTMLContent.ADDITONAL_IMAGE_LINK;
 		content = content.replace(Tags.additionalLinkHrefTag, href);
 		content = content.replace(Tags.additionalLinkSrcURLTag, link.srcURL);
@@ -75,7 +75,7 @@ final class LogFileHelper {
 	 * Return content from the log list container HTML file in resources folder
 	 * @return log list container HTML as String
 	 */
-	String getLoglistContainerHTML() {
+	synchronized String getLoglistContainerHTML() {
 		return BaseHTMLContent.LOG_LIST_CONTAINER_HTML;
 	}
 	
@@ -83,7 +83,7 @@ final class LogFileHelper {
 	 * Return content from the log container without log list HTML file in resources folder
 	 * @return log container without log list HTML as String
 	 */
-	String getLogContainerWithoutLoglistHTML() {
+	synchronized String getLogContainerWithoutLoglistHTML() {
 		return BaseHTMLContent.LOG_CONTAINER_WITHOUT_LOG_LIST_HTML;
 	}
 	
@@ -91,7 +91,7 @@ final class LogFileHelper {
 	 * Return content from the log container with log list HTML file in resources folder
 	 * @return log container with log list HTML as String
 	 */
-	String getLogContainerWithLoglistHTML() {
+	synchronized String getLogContainerWithLoglistHTML() {
 		return BaseHTMLContent.LOG_CONTAINER_WITH_LOGLIST_HTML;
 	}
 	
@@ -99,7 +99,7 @@ final class LogFileHelper {
 	 * Return content from the log list item HTML file in resources folder
 	 * @return log list item HTML as String
 	 */
-	String getLogListItemHTML() {
+	synchronized String getLogListItemHTML() {
 		return BaseHTMLContent.LOG_LIST_ITEM_HTML;
 	}
 	
@@ -107,7 +107,7 @@ final class LogFileHelper {
 	 * Return content from the log table body HTML file in resources folder
 	 * @return log table body HTML as String
 	 */
-	String getLogTableBodyHTML() {
+	synchronized String getLogTableBodyHTML() {
 		return BaseHTMLContent.LOG_TABLE_BODY_HTML;
 	}
 	
@@ -115,7 +115,7 @@ final class LogFileHelper {
 	 * Return content from the log collapsible HTML file in resources folder
 	 * @return log collapsible HTML as String
 	 */
-	String getlogCollapsibleHTML() {
+	synchronized String getlogCollapsibleHTML() {
 		return BaseHTMLContent.LOG_COLLAPSIBLE_HTML;
 	}
 }

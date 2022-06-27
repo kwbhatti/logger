@@ -122,7 +122,7 @@ final class LogFile extends FlatFileImpl {
 	 *  to the main log container which does support the log list.
 	 *  Sets the value of isLogListPreset to true.
 	 */
-	void createLoglist() {
+	synchronized void createLoglist() {
 		String loglistContainer = logFileHelper.getLoglistContainerHTML();
 		this.replaceContent(Tags.logListTag, loglistContainer);
 		this.replaceContent(logFileHelper.getLogContainerWithoutLoglistHTML(), logFileHelper.getLogContainerWithLoglistHTML());
@@ -139,7 +139,7 @@ final class LogFile extends FlatFileImpl {
 	 * @param name Name of the log being created.
 	 * @param logTableBodyId id to link the list item to the main log table.
 	 */
-	void createLogListItem(String name, String logTableBodyId) {
+	synchronized void createLogListItem(String name, String logTableBodyId) {
 		if (!isLoglistPresent) createLoglist();
 		String logListItemHTML = logFileHelper.getLogListItemHTML();
 		logListItemHTML = logListItemHTML.replace(Tags.logTableBodyIdTag, logTableBodyId);
@@ -153,7 +153,7 @@ final class LogFile extends FlatFileImpl {
 	 * <br>The String already contains the new log table body tag for recursion 
 	 *  as well that table body id to link it to the list item.
 	 */
-	void createTableBody(String tableBodyHTML) {
+	synchronized void createTableBody(String tableBodyHTML) {
 		this.replaceContent(Tags.logTableBodyTag, tableBodyHTML);
 	}
 	
@@ -164,7 +164,7 @@ final class LogFile extends FlatFileImpl {
 	 *  so the correct tag is updated for the respected log
 	 * @param content row content for the table that already contains another log table row tag
 	 */
-	void log(String logTableRowTag, String content) {
+	synchronized void log(String logTableRowTag, String content) {
 		this.replaceContent(logTableRowTag, content);
 	}
 }

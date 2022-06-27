@@ -66,7 +66,7 @@ abstract class AbstractLog {
 	 * @param existingIds list of existing elements for similar elements
 	 * @return String value of base Id after appending the index
 	 */
-	protected String getElementId(String baseId, List<String> existingIds) {
+	protected synchronized String getElementId(String baseId, List<String> existingIds) {
 		String id = baseId;
 		String finalId = null;
 		int index = 0;
@@ -82,7 +82,7 @@ abstract class AbstractLog {
 	 * Gets the log table Id by called getElemetId which handles similar elements
 	 * @return String value of log table id
 	 */
-	protected String getLogTableId() {
+	protected synchronized String getLogTableId() {
 		if (this.name.equals(Constants.mainlogId)) return this.name;
 		else return getElementId(this.name + "-logs-", logTableBodyIds);
 	}
@@ -91,7 +91,7 @@ abstract class AbstractLog {
 	 * Returns name of the log which is set to main-logs for main log
 	 * @return String value of the log name
 	 */
-	String getName() {
+	synchronized String getName() {
 		return this.name;
 	}
 
@@ -102,7 +102,7 @@ abstract class AbstractLog {
 	 *  If the log is for the main log then removes the style of display none, so that main log always shows upon load.
 	 *  Calls the createTableBody for the main log file to create the table.
 	 */
-	private void createTableBody() {
+	private synchronized void createTableBody() {
 		String tableBodyHTML = logFileHelper.getLogTableBodyHTML();
 		tableBodyHTML = tableBodyHTML.replace(Tags.logTableRowTag, logTableRowTag);
 		tableBodyHTML = tableBodyHTML.replace(Tags.logTableBodyIdTag, logTableBodyId);
@@ -125,7 +125,7 @@ abstract class AbstractLog {
 	 * @param isWarning boolean if the message should be logged as warning
 	 * @return
 	 */
-	private <T> String getMessage(T message, boolean isWarning) {
+	private synchronized <T> String getMessage(T message, boolean isWarning) {
 		String timestamp = new DateHelper().getCurrentTimeStamp();
 		StringBuilder messageBuilder = new StringBuilder()
 				.append("<tr>");
@@ -142,7 +142,7 @@ abstract class AbstractLog {
 	 * Public method to log information to the log
 	 * @param message String message to be logged
 	 */
-	public <T> void info(T message) {
+	public synchronized <T> void info(T message) {
 		if (!hasTableBody) createTableBody();
 		getLogFile().log(this.logTableRowTag, getMessage(message, false));
 	}
@@ -152,7 +152,7 @@ abstract class AbstractLog {
 	 *  The warning text itself is logged in red color.
 	 * @param message String message to be logged
 	 */
-	public <T>void warn(T message) {
+	public synchronized <T>void warn(T message) {
 		if (!hasTableBody) createTableBody();
 		getLogFile().log(this.logTableRowTag, getMessage(message, true));
 	}
@@ -168,7 +168,7 @@ abstract class AbstractLog {
 	 * @param name String name to be display for the node
 	 * @param message String message for the node body
 	 */
-	public <T> void toNode(String name, T message) {
+	public synchronized <T> void toNode(String name, T message) {
 		String logCollapsibleId = getElementId(logTableBodyId + "-name", collapsibleIds);
 		String collapsibleHTML = logFileHelper.getlogCollapsibleHTML();
 		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleTopTextTag, name);
@@ -184,7 +184,7 @@ abstract class AbstractLog {
 	 *  the exception class, and the stack trace.
 	 * @param exception Exception to be logged.
 	 */
-	public void exception(Exception exception) {
+	public synchronized void exception(Exception exception) {
 		StringBuilder stackTrace = new StringBuilder();
 		for (StackTraceElement trace: exception.getStackTrace()) {
 			stackTrace.append(trace + "<br>");

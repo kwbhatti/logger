@@ -89,7 +89,7 @@ public class Logger extends AbstractLog {
 	 * @param name String name of the log file
 	 * @return Instance of the Log class.
 	 */
-	public Log createLog(String name) {
+	public synchronized Log createLog(String name) {
 		return new Log(this.logFile, name);
 	}
 
