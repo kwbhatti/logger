@@ -157,6 +157,15 @@ abstract class AbstractLog {
 		getLogFile().log(this.logTableRowTag, getMessage(message, true));
 	}
 	
+	private synchronized <T> String getCollapsibleHTML(String name, T message) {
+		String logCollapsibleId = getElementId(logTableBodyId + "-name", collapsibleIds);
+		String collapsibleHTML = logFileHelper.getlogCollapsibleHTML();
+		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleTopTextTag, name);
+		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleBottomIdTag, logCollapsibleId);
+		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleBottomTextTag, String.valueOf(message));
+		return collapsibleHTML;
+	}
+	
 	/**
 	 * Public method to log to an accordion looking element.
 	 *  Suggested used when the message is too big. 
@@ -169,12 +178,16 @@ abstract class AbstractLog {
 	 * @param message String message for the node body
 	 */
 	public synchronized <T> void toNode(String name, T message) {
-		String logCollapsibleId = getElementId(logTableBodyId + "-name", collapsibleIds);
-		String collapsibleHTML = logFileHelper.getlogCollapsibleHTML();
-		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleTopTextTag, name);
-		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleBottomIdTag, logCollapsibleId);
-		collapsibleHTML = collapsibleHTML.replace(Tags.logCollapsibleBottomTextTag, String.valueOf(message));
+		String collapsibleHTML = getCollapsibleHTML(name, message);
 		info(collapsibleHTML);
+	}
+	
+	public synchronized <T> void toNode(String name, T message, LogInfoType logInfoType) {
+		String collapsibleHTML = getCollapsibleHTML(name, message);
+		switch (logInfoType) {
+		case INFO: info(collapsibleHTML); break;
+		case WARN: warn(collapsibleHTML); break;
+		}
 	}
 	
 	/**
@@ -195,6 +208,6 @@ abstract class AbstractLog {
 				.append("<br>Exception Cause: " + exception.getCause())
 				.append("<br>Exception Class Name: " + exception.getClass().getSimpleName())
 				.append("<br>Exception StackTrace: <br>" + stackTrace.toString());
-		warn(exceptionMessage.toString());
+		toNode(exception.getClass().getSimpleName(), exceptionMessage.toString(), LogInfoType.WARN);
 	}
 }

@@ -35,3 +35,6 @@ released simple logger (added docs) 1/23/2021
 	
 released simple logger (removed old files) 6/26/2022
 	removed all the old files that had the older implementation
+	
+released simple logger 7/8/22
+	log exceptions to node
