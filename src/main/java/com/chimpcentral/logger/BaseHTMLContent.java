@@ -125,7 +125,7 @@ class BaseHTMLContent {
 			+ "\r\n"
 			+ "                <!-- chimp-central-log-container-start --><div class=\"p-2\" style=\"background-color: rgb(245, 245, 245); width: 100%\"><!-- chimp-central-log-container-end -->\r\n"
 			+ "                    <div class=\"justify-content-center container\" style=\"width: 100%; height: 100%; overflow: auto;\">\r\n"
-			+ "                        <table class=\"table table-responsive\">\r\n"
+			+ "                        <table class=\"table table-responsive\" style=\"table-layout: fixed; word-wrap: break-word;\">\r\n"
 			+ "                            <thead>\r\n"
 			+ "                                <tr>\r\n"
 			+ "                                    <th style=\"width: 10%;\">log info</th>\r\n"

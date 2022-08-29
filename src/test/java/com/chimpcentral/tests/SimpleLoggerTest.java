@@ -10,7 +10,7 @@ import com.chimpcentral.logger.LoggerOptions;
 public class SimpleLoggerTest {
 
 	public static String getRandomString(String message) {
-		return message + "\t" + UUID.randomUUID() + UUID.randomUUID() + UUID.randomUUID()
+		return message + UUID.randomUUID() + UUID.randomUUID() + UUID.randomUUID()
 							+ UUID.randomUUID() + UUID.randomUUID() + UUID.randomUUID()
 							+ UUID.randomUUID() + UUID.randomUUID() + UUID.randomUUID()
 							+ UUID.randomUUID() + UUID.randomUUID() + UUID.randomUUID()
@@ -89,6 +89,25 @@ public class SimpleLoggerTest {
 		log3.info(getRandomString("in test 3 log"));
 		log3.toNode("some-name", "message in log3 one");
 		log3.toNode("some-name", "message in log3 two");
+		log3.info(
+				getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+				+ getRandomString("lengthy").replaceAll("-", "")
+
+				);
 		log3.warn(getRandomString("in test 3 log"));
 		log3.warn(getRandomString("in test 3 log"));
 		log3.info(getRandomString("in test 3 log"));
