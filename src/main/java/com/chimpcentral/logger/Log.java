@@ -7,7 +7,7 @@ import com.chimpcentral.date.DateHelper;
 
 /**
  * Default class to be extended only by Logger and Log.
- * <br>AbstractLog implements all the methods that are common for logging.
+ * <br>Log implements all the methods that are common for logging.
  *  AbstractLog class provides the following information about the log.
  *  <ul>
  *  <li>logFile (LogFile class): this the log file that all the information is 
@@ -28,7 +28,7 @@ import com.chimpcentral.date.DateHelper;
  * @author kbhatti
  *
  */
-abstract class AbstractLog {
+public abstract class Log {
 	
 	protected LogFile logFile = null;
 	protected LogFileHelper logFileHelper = null;
@@ -44,7 +44,7 @@ abstract class AbstractLog {
 	 *  Sets the name of the log file, the log table body id, and the log table row tag.
 	 * @param name String name of the log (is main-log for logger)
 	 */
-	AbstractLog(String name) {
+	Log(String name) {
 		this.logFileHelper = new LogFileHelper();
 		this.name = name;
 		this.logTableBodyId = getLogTableId();
@@ -209,5 +209,18 @@ abstract class AbstractLog {
 				.append("<br>Exception Class Name: " + exception.getClass().getSimpleName())
 				.append("<br>Exception StackTrace: <br>" + stackTrace.toString());
 		toNode(exception.getClass().getSimpleName(), exceptionMessage.toString(), LogInfoType.WARN);
+	}
+	
+	public synchronized void image(String screenshotPath) {
+		String imageTag = "<img src=\"" + screenshotPath + "\" style=\"width: 250px; height: auto;\">";
+		String info = "<a href='" + screenshotPath + "' target='_blank'>" + imageTag + "</a>";
+		info(info);
+	}
+	
+	public synchronized void image(String screenshotPath, int widthInPixels) {
+		if (widthInPixels > 500) widthInPixels = 500;
+		String imageTag = "<img src=\"" + screenshotPath + "\" style=\"width: " + widthInPixels + "px; height: auto;\">";
+		String info = "<a href='" + screenshotPath + "' target='_blank'>" + imageTag + "</a>";
+		info(info);
 	}
 }

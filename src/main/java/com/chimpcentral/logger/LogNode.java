@@ -1,7 +1,7 @@
 package com.chimpcentral.logger;
 
 /**
- * Log is a public class and extends Abstract log.
+ * LogNode is a public class and extends abstract Log.
  *  And provides all the logging methods to the user.
  * Provides the instance of a log file within the logger
  * and should be created after creating the logger by using the following code
@@ -14,7 +14,7 @@ package com.chimpcentral.logger;
  * Otherwise it would only create a log list item
  * The log list item has a link that points to the respective log table in the main logs pane
  */
-public class Log extends AbstractLog {
+public class LogNode extends Log {
 	
 	/**
 	 * Default constructor that gets called by the logger instance 
@@ -23,7 +23,7 @@ public class Log extends AbstractLog {
 	 * @param logFile LogFile which extends the FlatFile where the content is being written to
 	 * @param name Name of the log to be created in the logger
 	 */
-	Log(LogFile logFile, String name) {
+	LogNode(LogFile logFile, String name) {
 		super(name);
 		this.logFile = logFile;
 		this.logFile.createLogListItem(name, logTableBodyId);

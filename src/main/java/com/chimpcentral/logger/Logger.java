@@ -7,14 +7,14 @@ import com.chimpcentral.io.FlatFile;
 
 /**
  * Logger is the main class to create the log.
- * <br>Extends AbstractLog class and provides all the logging functionality.
+ * <br>Extends Log class and provides all the logging functionality.
  * <br>Logger must have LoggerOptions and LogFile
  * <br>Uses user provided logger options or uses default logger options.
  * <br>Creates a LogFile instance which in return creates the log file
  * @author kbhatti
  *
  */
-public class Logger extends AbstractLog {
+public class Logger extends Log {
 
 	LoggerOptions loggerOptions = null;
 	
@@ -89,8 +89,8 @@ public class Logger extends AbstractLog {
 	 * @param name String name of the log file
 	 * @return Instance of the Log class.
 	 */
-	public synchronized Log createLog(String name) {
-		return new Log(this.logFile, name);
+	public synchronized LogNode createLog(String name) {
+		return new LogNode(this.logFile, name);
 	}
 
 	

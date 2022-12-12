@@ -38,6 +38,8 @@ public class LoggerOptions {
 	private String logoLinkURL = null;
 	private String githubURL = null;
 	private String jiraURL = null;
+	private String agilityAiURL = null;
+	private String azureRepoURL = null;
 	private String mailToAddress = null;
 	private String title = null;
 	private String heading = null;
@@ -194,6 +196,42 @@ public class LoggerOptions {
 		return this;
 	}
 
+	/**
+	 * Sets the Azure Repo link URL (href tag)
+	 * @param href String: Azure Repo URL (href tag)
+	 * @return instance of the LoggerOptions
+	 */
+	public LoggerOptions setAzureRepoURL(String href) {
+		this.azureRepoURL = href;
+		return this;
+	}
+	
+	/**
+	 * Returns Azure Repo URL (href tag)
+	 * @return String value of Azure Repo (href tag)
+	 */
+	String getAzureRepoURL() {
+		return azureRepoURL;
+	}
+
+	/**
+	 * Sets the Agility AI link URL (href tag)
+	 * @param href String: Agility AI URL (href tag)
+	 * @return instance of the LoggerOptions
+	 */
+	public LoggerOptions setAgilityAiURL(String href) {
+		this.agilityAiURL = href;
+		return this;
+	}
+	
+	/**
+	 * Returns Agility AI URL (href tag)
+	 * @return String value of Agility URL (href tag)
+	 */
+	String getAgilityAiURL() {
+		return agilityAiURL;
+	}
+	
 	/**
 	 * Returns mail to address for mailing link
 	 * @return String value of mail to address

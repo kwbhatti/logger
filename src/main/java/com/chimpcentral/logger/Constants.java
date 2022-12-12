@@ -67,7 +67,9 @@ final class Constants {
 	enum AdditionalLink {
 		GITHUB ("github", GITHUB_SRC_URL + "/github-4.png"),
 		JIRA ("jira", GITHUB_SRC_URL + "/jira-1.png"),
-		EMAIL ("email", GITHUB_SRC_URL + "/email-1.png");
+		EMAIL ("email", GITHUB_SRC_URL + "/email-1.png"),
+		AGILITY ("agility ai", GITHUB_SRC_URL + "/digital-ai-2.png"),
+		AZURE ("azure", GITHUB_SRC_URL + "/azure-1.png");
 		
 		String value = null;
 		String srcURL = null;

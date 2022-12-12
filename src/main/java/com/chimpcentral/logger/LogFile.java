@@ -83,6 +83,8 @@ final class LogFile extends FlatFileImpl {
 		return new StringBuilder()
 				.append(getAdditionalLinkHTML(AdditionalLink.GITHUB, loggerOptions.getGithubURL()))
 				.append(getAdditionalLinkHTML(AdditionalLink.JIRA, loggerOptions.getJiraURL()))
+				.append(getAdditionalLinkHTML(AdditionalLink.AGILITY, loggerOptions.getAgilityAiURL()))
+				.append(getAdditionalLinkHTML(AdditionalLink.AZURE, loggerOptions.getAzureRepoURL()))
 				.append(getAdditionalLinkHTML(AdditionalLink.EMAIL, loggerOptions.getMailToAddress()))
 				.toString();
 	}
