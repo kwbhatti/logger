@@ -56,6 +56,8 @@ public class SimpleLoggerTest {
 		LoggerOptions loggerOptions = new LoggerOptions()
 												.setFilename("mylogs.html")
 												.setGithubURL("https://github.com/")
+												.setAgilityAiURL("blah")
+												.setAzureRepoURL("foo")
 												.setJiraURL("https://www.atlassian.com/software/jira")
 												.setMailToAddress("some@some.com")
 												.setTitle("My title")

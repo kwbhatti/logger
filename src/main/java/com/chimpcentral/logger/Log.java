@@ -197,7 +197,7 @@ public abstract class Log {
 	 *  the exception class, and the stack trace.
 	 * @param exception Exception to be logged.
 	 */
-	public synchronized void exception(Exception exception) {
+	public synchronized void exception(Throwable exception) {
 		StringBuilder stackTrace = new StringBuilder();
 		for (StackTraceElement trace: exception.getStackTrace()) {
 			stackTrace.append(trace + "<br>");

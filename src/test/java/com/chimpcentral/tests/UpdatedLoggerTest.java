@@ -34,15 +34,15 @@ public class UpdatedLoggerTest {
 		
 		LoggerOptions loggerOptions = new LoggerOptions()
 												.setFilename("mylogs.html")
-//												.setGithubURL("https://github.com/")
-//												.setJiraURL("https://www.atlassian.com/software/jira")
+												.setGithubURL("https://github.com/")
+												.setJiraURL("https://www.atlassian.com/software/jira")
 												.setMailToAddress("some@some.com")
 												.setAzureRepoURL("https://azure.microsoft.com/en-us/")
 												.setAgilityAiURL("https://digital.ai/products/agility/")
 												.setTitle("My title")
 												.setHeading("My Heading")
-												.setSubHeading("my sub heading");
-//												.removeImages();
+												.setSubHeading("my sub heading")
+												.removeImages();
 		
 		Logger logger = new Logger(loggerOptions);
 		logger.info(getRandomString("in main logger"));

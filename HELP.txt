@@ -42,3 +42,5 @@ released simple logger 7/8/22
 released logger updated for handling lengthy strings 8/28/2022
 
 released logger updated AbstractLog name to Log and added logging screenshot capability 12/11/2022
+
+released logger updated exception method to take Throwable instead 2/3/2023
