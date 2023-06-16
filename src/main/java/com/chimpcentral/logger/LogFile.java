@@ -143,9 +143,11 @@ final class LogFile extends FlatFileImpl {
 	 */
 	synchronized void createLogListItem(String name, String logTableBodyId) {
 		if (!isLoglistPresent) createLoglist();
+		String logListItemId = logTableBodyId.replace("logs", "loglist");
 		String logListItemHTML = logFileHelper.getLogListItemHTML();
 		logListItemHTML = logListItemHTML.replace(Tags.logTableBodyIdTag, logTableBodyId);
 		logListItemHTML = logListItemHTML.replace(Tags.logListItemNameTag, name);
+		logListItemHTML = logListItemHTML.replace(Tags.logListItemIdTag, logListItemId);
 		this.replaceContent(Tags.logListItemTag, logListItemHTML);
 	}
 	
