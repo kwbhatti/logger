@@ -26,7 +26,7 @@ public class LogNode extends Log {
 	LogNode(LogFile logFile, String name) {
 		super(name);
 		this.logFile = logFile;
-		this.logFile.createLogListItem(name, logTableBodyId);
+		this.logFile.createLogListItem(name, logTableBodyId, logListItemId, logListItemLinkId);
 	}
 
 	@Override

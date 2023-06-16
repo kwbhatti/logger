@@ -191,7 +191,7 @@ class BaseHTMLContent {
 	
 	static final String LOG_LIST_ITEM_HTML = 
 			"<li id=\"<!-- chimp-central-log-list-item-id -->\" class=\"log-list\">\r\n"
-			+ "    <a class=\"nav-link log-list-link\" onclick=\"displayTestLog('<!-- chimp-central-log-table-body-id -->', '<!-- chimp-central-log-list-item-id -->')\"><!-- chimp-central-log-list-item-name --></a>\r\n"
+			+ "    <a id=\"<!-- chimp-central-log-list-item-link-id -->\" class=\"nav-link log-list-link\" onclick=\"displayTestLog('<!-- chimp-central-log-table-body-id -->', '<!-- chimp-central-log-list-item-id -->')\"><!-- chimp-central-log-list-item-name --></a>\r\n"
 			+ "</li>\r\n"
 			+ "<hr class=\"log-list-hr\">\r\n"
 			+ "<!-- chimp-central-log-list-item -->";

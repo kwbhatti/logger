@@ -141,14 +141,20 @@ final class LogFile extends FlatFileImpl {
 	 * @param name Name of the log being created.
 	 * @param logTableBodyId id to link the list item to the main log table.
 	 */
-	synchronized void createLogListItem(String name, String logTableBodyId) {
+	synchronized void createLogListItem(String name, String logTableBodyId, String logListItemId, String logListItemLinkId) {
 		if (!isLoglistPresent) createLoglist();
-		String logListItemId = logTableBodyId.replace("logs", "loglist");
 		String logListItemHTML = logFileHelper.getLogListItemHTML();
 		logListItemHTML = logListItemHTML.replace(Tags.logTableBodyIdTag, logTableBodyId);
 		logListItemHTML = logListItemHTML.replace(Tags.logListItemNameTag, name);
 		logListItemHTML = logListItemHTML.replace(Tags.logListItemIdTag, logListItemId);
+		logListItemHTML = logListItemHTML.replace(Tags.logListItemLinkIdTag, logListItemLinkId);
 		this.replaceContent(Tags.logListItemTag, logListItemHTML);
+	}
+	
+	synchronized void updatedLogListItemTextColor(String logListItemLinkId, String color) {
+		String elementPrefix = "<a id=\"" + logListItemLinkId + "\"";
+		String updatedElementPrefix = elementPrefix + " style=\"color:" + color + ";\"";
+		this.replaceContent(elementPrefix, updatedElementPrefix);
 	}
 	
 	/**
