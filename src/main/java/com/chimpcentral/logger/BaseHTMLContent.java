@@ -14,11 +14,18 @@ class BaseHTMLContent {
 			+ "        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n"
 			+ "        \r\n"
 			+ "        <script>\r\n"
-			+ "            function displayTestLog(logId) {\r\n"
+			+ "            function displayTestLog(logId, logItemId) {\r\n"
+			+ "				console.log(Array.from(document.getElementsByClassName(\"test-log\")).length);\r\n"
 			+ "                Array.from(document.getElementsByClassName(\"test-log\")).forEach(function (element) {\r\n"
 			+ "                    element.style.display = \"none\";\r\n"
 			+ "                });\r\n"
 			+ "                document.getElementById(logId).style.display = \"\";\r\n"
+			+ "                console.log(Array.from(document.getElementsByClassName(\"log-list\")).length);\r\n"
+			+ "                Array.from(document.getElementsByClassName(\"log-list\")).forEach(function (element) {\r\n"
+			+ " 			   console.log(\"updating \" + element.id)\r\n"
+			+ "                    element.style.backgroundColor = \"rgb(245, 245, 245)\";\r\n"
+			+ "                });\r\n"
+			+ "                document.getElementById(logItemId).style.backgroundColor = \"rgb(200, 200, 200)\";\r\n"
 			+ "            }\r\n"
 			+ "            function displayElement(elementId) {\r\n"
 			+ "                var style = document.getElementById(elementId).style.display;\r\n"
@@ -183,8 +190,8 @@ class BaseHTMLContent {
 			+ "</div>";
 	
 	static final String LOG_LIST_ITEM_HTML = 
-			"<li class=\"log-list\">\r\n"
-			+ "    <a class=\"nav-link log-list-link\" onclick=\"displayTestLog('<!-- chimp-central-log-table-body-id -->')\"><!-- chimp-central-log-list-item-name --></a>\r\n"
+			"<li id=\"<!-- chimp-central-log-list-item-id -->\" class=\"log-list\">\r\n"
+			+ "    <a class=\"nav-link log-list-link\" onclick=\"displayTestLog('<!-- chimp-central-log-table-body-id -->', '<!-- chimp-central-log-list-item-id -->')\"><!-- chimp-central-log-list-item-name --></a>\r\n"
 			+ "</li>\r\n"
 			+ "<hr class=\"log-list-hr\">\r\n"
 			+ "<!-- chimp-central-log-list-item -->";

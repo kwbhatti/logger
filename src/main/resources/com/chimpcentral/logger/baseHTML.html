@@ -9,11 +9,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         <script>
-            function displayTestLog(logId) {
+            function displayTestLog(logId, logItemId) {
+				console.log(Array.from(document.getElementsByClassName("test-log")).length);
                 Array.from(document.getElementsByClassName("test-log")).forEach(function (element) {
                     element.style.display = "none";
                 });
                 document.getElementById(logId).style.display = "";
+                console.log(Array.from(document.getElementsByClassName("log-list")).length);
+                Array.from(document.getElementsByClassName("log-list")).forEach(function (element) {
+                    element.style.backgroundColor = "rgb(245, 245, 245)";
+                });
+                document.getElementById(logItemId).style.backgroundColor = "rgb(200, 200, 200)";
             }
             function displayElement(elementId) {
                 var style = document.getElementById(elementId).style.display;
@@ -120,7 +126,7 @@
 
                 <!-- chimp-central-log-container-start --><div class="p-2" style="background-color: rgb(245, 245, 245); width: 100%"><!-- chimp-central-log-container-end -->
                     <div class="justify-content-center container" style="width: 100%; height: 100%; overflow: auto;">
-                        <table class="table table-responsive">
+                        <table class="table table-responsive" style="table-layout: fixed; word-wrap: break-word;">
                             <thead>
                                 <tr>
                                     <th style="width: 10%;">log info</th>
