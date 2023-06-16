@@ -40,7 +40,7 @@ final class Tags {
 	static final String logListItemTag = "<!-- chimp-central-log-list-item -->";
 	static final String logListItemNameTag = "<!-- chimp-central-log-list-item-name -->";
 	static final String logListItemIdTag = "<!-- chimp-central-log-list-item-id -->";
-	
+	static final String logListItemLinkIdTag = "<!-- chimp-central-log-list-item-link-id -->";
 	/**
 	 * main log container tags
 	 */

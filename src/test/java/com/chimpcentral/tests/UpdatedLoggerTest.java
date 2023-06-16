@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.chimpcentral.logger.LResult;
 import com.chimpcentral.logger.Log;
 import com.chimpcentral.logger.Logger;
 import com.chimpcentral.logger.LoggerOptions;
@@ -121,5 +122,9 @@ public class UpdatedLoggerTest {
 		logs.add(log3);
 		logs.add(log4);
 		logs.forEach(e -> e.info("I have created this log"));
+		log1.setResult(LResult.pass);
+		log2.setResult(LResult.fail);
+		log3.setResult(LResult.skip);
+		
 	}
 }

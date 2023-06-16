@@ -34,6 +34,8 @@ public abstract class Log {
 	protected LogFileHelper logFileHelper = null;
 	protected String name = null;
 	protected String logTableBodyId = null;
+	protected String logListItemId = null;
+	protected String logListItemLinkId = null;
 	protected List<String> logTableBodyIds = new ArrayList<>();
 	protected String logTableRowTag = null;
 	private boolean hasTableBody = false;
@@ -48,6 +50,8 @@ public abstract class Log {
 		this.logFileHelper = new LogFileHelper();
 		this.name = name;
 		this.logTableBodyId = getLogTableId();
+		this.logListItemId = this.logTableBodyId.replace("logs", "logs-list-item");
+		this.logListItemLinkId = this.logTableBodyId.replace("logs", "logs-list-item-link");
 		this.logTableRowTag = "<!-- chimp-central-" + name + "-log-table-row -->";
 	}
 	
@@ -222,5 +226,13 @@ public abstract class Log {
 		String imageTag = "<img src=\"" + screenshotPath + "\" style=\"width: " + widthInPixels + "px; height: auto;\">";
 		String info = "<a href='" + screenshotPath + "' target='_blank'>" + imageTag + "</a>";
 		info(info);
+	}
+	
+	public synchronized void setListItemTextColor(String color) {
+		this.logFile.updatedLogListItemTextColor(logListItemLinkId, color);
+	}
+	
+	public synchronized void setResult(LResult result) {
+		this.setListItemTextColor(result.color);
 	}
 }
